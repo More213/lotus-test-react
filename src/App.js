@@ -1,25 +1,22 @@
+import {  useState } from "react";
 import logo from './logo.svg';
+import { useId } from 'react';
+import options from "./consts/optionsTime";
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [time, setTime] = useState(new Date().toLocaleString("ru", options));
+
+  const getStepOfTime = () => {
+    
+  }
+
+  setTimeout(() => {
+    setTime(new Date().toLocaleString("ru", options));
+  }, 1000);
+  return <h1 >Current Date: {time}</h1>;
 }
+
 
 export default App;
